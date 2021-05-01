@@ -1,0 +1,15 @@
+g++ main.cpp -IC:\GAMES\SDL2-2.0.14\i686-w64-mingw32\include\SDL2 -IC:\GAMES\OpenGL-ES\include -IC:\GAMES\freeglut-3.0.0-1\include -IC:\GAMES\glew-2.1.0\include -LC:\GAMES\SDL2-2.0.14\i686-w64-mingw32\lib -LC:\GAMES\freeglut-3.0.0-1\lib -LC:\GAMES\glew-2.1.0\lib\Release\Win32 -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2 -lOpenGL32 -lglu32 -lfreeGLUT -lglew32 -o main
+
+main.cpp: In function 'int SDL_main(int, char**)':
+main.cpp:79:23: error: 'vboCreate' was not declared in this scope
+  GLuint triangleVBO = vboCreate(vertices, numVertices);
+                       ^~~~~~~~~
+main.cpp:103:63: error: a function-definition is not allowed here before '{' token
+  GLuint vboCreate(const Vertex *vertices, GLuint numVertices) {
+                                                               ^
+main.cpp:131:27: error: a function-definition is not allowed here before '{' token
+  void vboFree(GLuint vbo) {
+                           ^
+main.cpp:148:2: error: 'vboFree' was not declared in this scope
+  vboFree(triangleVBO);
+  ^~~~~~~
